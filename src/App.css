@@ -1,4 +1,4 @@
-/* * {
+* {
   padding: 0%;
   margin: 0%;
   box-sizing: border-box;
@@ -7,6 +7,48 @@
 body {
   background-color: #eef3f7;
 }
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin: 30px;
+}
+.booklist {
+  width: 90vw;
+  max-width: 1170px;
+  margin: 5rem auto;
+  display: grid;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .booklist {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.book {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+}
+.book img {
+  width: 50%;
+  object-fit: cover;
+}
+.book h2 {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+.book h4 {
+  color: #617d98;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  letter-spacing: 2px;
+}
+/* 
 .heading {
   display: flex;
   align-items: center;

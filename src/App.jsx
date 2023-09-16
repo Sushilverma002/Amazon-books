@@ -1,5 +1,26 @@
 import React from "react";
 import "./App.css";
+
+// const title = "ram ram ji";
+// const author = "sushil ";
+// const images = "/image/daa.png";
+
+// set up for dyanmically provide data
+const firstBook = {
+  title: "Algorithum",
+  author: "Behroz A.forz",
+  images: "/image/daa.png",
+};
+const secondBook = {
+  title: "Eloquent",
+  author: "Margin Haverbreak",
+  images: "/image/eloquent_js.png",
+};
+const thirdBook = {
+  title: "30Dayes Of React",
+  author: "Full Stack",
+  images: "/image/reactthirty.png",
+};
 function App() {
   return (
     <>
@@ -25,31 +46,51 @@ function App() {
           </div>
         </div>
       </div> */}
-      <Books/>
-      <Books/>
-      <Books/>
+      <h1 className="heading">Amazone Best Book Seller</h1>
+      <section className="booklist">
+        <Books
+          title={firstBook.title}
+          author={firstBook.author}
+          images={firstBook.images}
+        />
+        <Books
+          title={secondBook.title}
+          author={secondBook.author}
+          images={secondBook.images}
+        />
+        <Books
+          title={thirdBook.title}
+          author={thirdBook.author}
+          images={thirdBook.images}
+        />
+      </section>
     </>
   );
 }
-
-const Books = () =>{
-  return(
-    <article>
-      <Image />
+// METHOD 3 FOR PROPS SO  you can directly provide the props to function.
+// const Boooks = ({title , images , author}) => {} after that console.log will not redefined
+const Books = (props) => {
+  console.log(props);
+  return (
+    // multiple method of accessing props
+    // const {title , images, author} = props;
+    <article className="book">
+      {/* <Image />
       <Title />
-      <Author />
+      <Author /> */}
+
+      <img src={props.images} alt="book1" />
+      <h2>{props.title}</h2>
+      <h4>{props.author.toUpperCase()}</h4>
     </article>
   );
 };
-const Image = () => <img src="/image/daa.png" alt="book1" />
-const Title = () =>{
-  return (
-    <h2>Book title</h2>
-  );
-};
-const Author = () =>{
-  return (
-    <h4>Author Name</h4>
-  );
-};
+
+// const Image = () => <img className="" src="/image/daa.png" alt="book1" />;
+// const Title = () => {
+//   return <h2>Book title</h2>;
+// };
+// const Author = () => {
+//   return <h4>Author Name</h4>;
+// };
 export default App;
