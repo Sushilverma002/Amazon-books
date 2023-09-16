@@ -3,7 +3,7 @@ import "./App.css";
 function App() {
   return (
     <>
-      <div className="bestSeller">
+      {/* <div className="bestSeller">
         <div className="heading">
           <h1>Amazone Best Seller</h1>
         </div>
@@ -24,9 +24,32 @@ function App() {
             <h4>Full Stack</h4>
           </div>
         </div>
-      </div>
+      </div> */}
+      <Books/>
+      <Books/>
+      <Books/>
     </>
   );
 }
 
+const Books = () =>{
+  return(
+    <article>
+      <Image />
+      <Title />
+      <Author />
+    </article>
+  );
+};
+const Image = () => <img src="/image/daa.png" alt="book1" />
+const Title = () =>{
+  return (
+    <h2>Book title</h2>
+  );
+};
+const Author = () =>{
+  return (
+    <h4>Author Name</h4>
+  );
+};
 export default App;
